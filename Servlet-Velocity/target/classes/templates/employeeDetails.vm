@@ -1,0 +1,65 @@
+<html>
+    <head>
+      <title>Database Result</title>
+      <style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 50%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+    </head>
+    <body bgcolor = "#f0f0f0">
+      <h1 align = "center">Database Result</h1>
+      <table border = "1" align="center">
+        #foreach( $result in $resultList )
+          <tr>
+          	<td>ID </td>
+            <td>$result.id</td>
+          </td>
+          </tr>
+          #if ($result.isNotNull($result.first_name))
+          <tr> 
+          <td>First Name</td>
+          <td>$result.first_name</td>
+          </tr>
+          #end
+          #if ($result.isNotNull($result.last_name))
+          <tr>
+          <td>Last Name </td>
+          <td>$result.last_name</td>
+          </tr>
+          #end
+          #if ($result.isNotNull($result.gender))
+          <tr> 
+          <td>Gender </td>
+          <td>$result.gender</td>
+          </tr>
+          #end
+          #if ($result.isNotNull($result.address))
+          <tr>
+          <td>Address </td>
+          <td>$result.address</td>
+          </tr>
+          #end
+          #if ($result.isNotNull($result.role))
+          <tr> 
+          <td>Role </td>
+          <td>$result.role</td>
+          </tr>
+          #end
+        #end
+      </table>
+      #include("templates/footer.vm")
+    </body>
+  </html>
