@@ -35,6 +35,7 @@ public class FormServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		System.out.println("Into the get Method");
 		InitializeVelocityEngine initializeVelocityEngine = new InitializeVelocityEngine();
 		Map<String, Object> map = initializeVelocityEngine.InitializeVE();
 		
